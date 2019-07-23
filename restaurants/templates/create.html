@@ -5,6 +5,17 @@
         <title>Create</title>
     </head>
     <body>
-        
+        <form method="post">
+
+         <ul>
+        {% for e in create_form.errors %}
+            <li>{{e}}</li>
+        {% endfor %}
+        </ul>
+
+            {% csrf_token %}
+            {{ create_form.as_p }}
+        <input type="submit" value="Create">
+        </form>
     </body>
 </html>
